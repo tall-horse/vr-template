@@ -16277,6 +16277,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718664416}
   m_CullTransparentMesh: 1
+--- !u!1 &749912720 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8089292990963743559, guid: c930a904dc42b6c4dba61c4a3bebb519, type: 3}
+  m_PrefabInstance: {fileID: 1379992537}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &760496576
 GameObject:
   m_ObjectHideFlags: 0
@@ -31131,10 +31136,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIController: {fileID: 915709289}
-  BaseController: {fileID: 915709289}
+  BaseController: {fileID: 749912720}
   inputActionReference_UISwitcher: {fileID: 1825027882432678202, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   UICanvasGameobject: {fileID: 2081308248}
-  positionOffsetForUICanvasGameobject: {x: 0, y: 4, z: 10}
+  positionOffsetForUICanvasGameobject: {x: 0, y: 4, z: 8}
   lineVisual: {fileID: 1318008416}
 --- !u!4 &1003706832 stripped
 Transform:

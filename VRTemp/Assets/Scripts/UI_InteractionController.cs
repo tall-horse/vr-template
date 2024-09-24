@@ -12,7 +12,7 @@ public class UI_InteractionController : MonoBehaviour
     GameObject UIController;
 
     [SerializeField]
-    GameObject BaseController;
+    private GameObject BaseController;
 
     [SerializeField]
     InputActionReference inputActionReference_UISwitcher;
@@ -62,13 +62,12 @@ public class UI_InteractionController : MonoBehaviour
         {
             isUICanvasActive = true;
 
-            //Activating UI Controller by enabling its XR Ray Interactor and XR Interactor Line Visual
-            // UIController.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor>().enabled = true;
             lineVisual.SetActive(true);
             GetComponentInChildren<UnityEngine.XR.Interaction.Toolkit.Interactors.NearFarInteractor>().blockUIOnInteractableSelection = true;
 
             //Deactivating Base Controller by disabling its XR Direct Interactor
-            //BaseController.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.XRDirectInteractor>().enabled = false;
+            //BaseController.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.XRDirectInteractor>().enabled = false;\
+            BaseController.SetActive(false);
 
             //Adjusting the transform of the UI Canvas Gameobject according to the VR Player transform
             Vector3 positionVec = new Vector3(UIController.transform.position.x, positionOffsetForUICanvasGameobject.y, UIController.transform.position.z);
@@ -82,16 +81,9 @@ public class UI_InteractionController : MonoBehaviour
         }
         else
         {
+            BaseController.SetActive(true);
             isUICanvasActive = false;
-
-            //De-Activating UI Controller by enabling its XR Ray Interactor and XR Interactor Line Visual
-            //GetComponentInChildren<UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor>().enabled = false;
             lineVisual.SetActive(false);
-
-            //Activating Base Controller by disabling its XR Direct Interactor
-            //GetComponentInChildren<UnityEngine.XR.Interaction.Toolkit.Interactors.XRDirectInteractor>().enabled = true;
-
-            //De-Activating the UI Canvas Gameobject
             UICanvasGameobject.SetActive(false);
         }
 
